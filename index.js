@@ -5,6 +5,7 @@ import cors from 'cors';
 import eventRoutes from './routes/eventRoutes.js';
 import eventCategoryRoutes from './routes/eventCategoryRoutes.js';
 import weddingRoutes from './routes/weddingRoutes.js'
+import authRoute from './routes/authRoute.js';
 
 dotenv.config();    
 connectDB();    
@@ -31,3 +32,4 @@ app.use('/event', eventRoutes);
 app.use('/eventCategory', eventCategoryRoutes);
 
 app.use('/weddingsnaps', weddingRoutes);
+app.use('/auth', authRoute)
