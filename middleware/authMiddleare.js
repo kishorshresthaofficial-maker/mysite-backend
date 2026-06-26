@@ -1,9 +1,9 @@
 export const authMiddleware = (req, res, next) => {
-    const authHeader = req.heder.authorization;
+    const authHeader = req.headers.authorization;
     console.log(authHeader)
 
     try {
-        const token = authHeader.split("")[1];
+        const token = authHeader.split(" ")[1];
         const decoded = jwt.verify(token, "kishorshresthaofficial");
         req.user = decoded;
         next();

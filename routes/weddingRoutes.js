@@ -1,5 +1,6 @@
 import express from "express";
 import { createEvent, deleteEvent, getEventById, getEvents, updateEvent } from "../controller/weddingController.js";
+import { authMiddleware } from "../middleware/authMiddleare.js";
 
 
 const router = express.Router();
@@ -11,3 +12,10 @@ router.put("/update/:id", updateEvent)
 router.delete("/:id", deleteEvent)
 
 export default router;
+
+
+// router.get(
+//   "/getEvents",
+//   authMiddleware,
+//   getEvents
+// );
